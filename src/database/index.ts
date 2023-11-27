@@ -1,11 +1,17 @@
 import mongoose from "mongoose";
+import createDebug from "debug";
+import chalk from "chalk";
 
-export const connectToDatabase = async (mongoUrl: string) => {
+const debug = createDebug("furbys:database");
+
+const connectToDatabase = async (mongoUrl: string) => {
   try {
     await mongoose.connect(mongoUrl);
     mongoose.set("debug", true);
-    // Mensaje para cuando se ha conectado 🐼
+    debug(chalk.green("Connected to database"));
   } catch (error) {
-    // Mensaje para cuando no se ha conectado 🐇
+    debug(chalk.red("Not possible to connect to database"));
   }
 };
+
+export default connectToDatabase;
