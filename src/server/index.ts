@@ -2,11 +2,11 @@ import morgan from "morgan";
 import express from "express";
 import cors from "cors";
 import app from "./app.js";
-import PingController from "../features/ping/controller/PingController.js";
-import { notFoundError } from "./middlewares/errors/errorsMiddlewares.js";
+import {
+  generalError,
+  notFoundError,
+} from "./middlewares/errors/errorsMiddlewares.js";
 import pingRouter from "../features/ping/router/pingRouter.js";
-
-const pingController = new PingController();
 
 app.use(morgan("dev"));
 app.use(
@@ -22,3 +22,4 @@ app.use(express.json());
 app.use("/", pingRouter);
 
 app.use(notFoundError);
+app.use(generalError);
