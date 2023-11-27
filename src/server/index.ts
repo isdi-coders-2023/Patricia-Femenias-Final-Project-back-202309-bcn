@@ -2,6 +2,9 @@ import morgan from "morgan";
 import express from "express";
 import cors from "cors";
 import app from "./app.js";
+import PingController from "../features/ping/controller/PingController.js";
+
+const pingController = new PingController();
 
 app.use(morgan("dev"));
 app.use(
@@ -14,3 +17,4 @@ app.use(
 );
 
 app.use(express.json());
+app.use("/", pingController.getPong);
