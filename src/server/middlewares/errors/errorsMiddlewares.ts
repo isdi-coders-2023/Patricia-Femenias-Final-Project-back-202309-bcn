@@ -26,5 +26,5 @@ export const generalError = (
 
   debug(chalk.red("Error: ", privateMessage));
 
-  res.status(statusCode).json({ eror: error.message });
+  res.status(statusCode).json({ error: error.message });
 };
