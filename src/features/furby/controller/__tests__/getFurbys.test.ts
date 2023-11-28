@@ -18,7 +18,7 @@ describe("Given a FurbysController's getFurbys method", () => {
   };
 
   describe("When it receives a response", () => {
-    test("Then it should call its methos status with 200", async () => {
+    test("Then it should call its method status with the status code 200", async () => {
       const expectedStatusCode = 200;
 
       const furbysController = new FurbysController(
