@@ -15,7 +15,7 @@ describe("Given a PingController's getPong method", () => {
       json: jest.fn(),
     };
 
-    test("Then it should call its method status with 200", () => {
+    test("Then it should call its method status with the status code 200", () => {
       const expectedStatusCode = 200;
 
       pingController.getPong(req as Request, mockResponse as Response);
