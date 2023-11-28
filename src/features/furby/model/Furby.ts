@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 import { type FurbyStructure } from "../types";
 
 const FurbySchema = new Schema<FurbyStructure>({
@@ -36,6 +36,6 @@ const FurbySchema = new Schema<FurbyStructure>({
   },
 });
 
-const Furby = mongoose.model("Furby", FurbySchema, "furbys");
+const Furby = model("Furby", FurbySchema, "furbys");
 
 export default Furby;
