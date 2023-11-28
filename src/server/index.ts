@@ -7,6 +7,7 @@ import {
   notFoundError,
 } from "./middlewares/errors/errorsMiddlewares.js";
 import pingRouter from "../features/ping/router/pingRouter.js";
+import furbysRouter from "../features/furby/router/furbysRouter.js";
 
 app.use(morgan("dev"));
 app.use(
@@ -20,6 +21,7 @@ app.use(
 
 app.use(express.json());
 app.use("/", pingRouter);
+app.use("/furbys", furbysRouter);
 
 app.use(notFoundError);
 app.use(generalError);
