@@ -1,4 +1,5 @@
 import { type FurbyStructure } from "../types";
+
 const furbysMock: FurbyStructure[] = [
   {
     _id: "6564a27d66ed505ce77a67d3",

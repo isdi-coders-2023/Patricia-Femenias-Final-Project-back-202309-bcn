@@ -10,6 +10,7 @@ describe("Given a GET/furbys endpoint", () => {
     test("Then it should respond with the status code 200 and the furbys 'Peachy' and 'Gizmo'", async () => {
       const expectedStatusCode = 200;
       const path = "/furbys";
+
       await Furby.create(furbysMock[0]);
       await Furby.create(furbysMock[1]);
 
