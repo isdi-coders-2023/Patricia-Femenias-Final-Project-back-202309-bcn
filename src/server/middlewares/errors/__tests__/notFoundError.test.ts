@@ -1,4 +1,4 @@
-import { type Request, type Response, type NextFunction } from "express";
+import { type Request, type Response } from "express";
 import CustomError from "../../../CustomError/CustomError";
 import { notFoundError } from "../errorsMiddlewares";
 
