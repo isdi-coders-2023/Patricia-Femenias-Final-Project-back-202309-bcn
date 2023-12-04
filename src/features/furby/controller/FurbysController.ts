@@ -1,6 +1,6 @@
 import { type NextFunction, type Request, type Response } from "express";
 import { type FurbysRepository } from "../repository/types";
-import CustomError from "../../../server/CustomError/CustomError";
+import CustomError from "../../../server/CustomError/CustomError.js";
 
 class FurbysController {
   constructor(private readonly furbysRepository: FurbysRepository) {}
@@ -19,6 +19,7 @@ class FurbysController {
     const { furbyId } = req.params;
     try {
       await this.furbysRepository.deleteFurby(furbyId);
+
       res.status(200).json({});
     } catch {
       const error = new CustomError("Error deleting this Furby", 400);
