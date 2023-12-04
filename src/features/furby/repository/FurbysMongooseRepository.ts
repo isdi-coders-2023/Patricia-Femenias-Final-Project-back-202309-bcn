@@ -8,6 +8,14 @@ class FurbysMongooseRepository implements FurbysRepository {
 
     return furbys;
   }
+
+  public async deleteFurby(furbyId: string): Promise<void> {
+    try {
+      await Furby.findByIdAndDelete(furbyId);
+    } catch (error) {
+      throw new Error("Error deleting this Furby" + (error as Error).message);
+    }
+  }
 }
 
 export default FurbysMongooseRepository;
