@@ -1,0 +1,55 @@
+{
+  "info": {
+    "_postman_id": "6348467b-88ef-47b4-8210-f34e0002a0f0",
+    "name": "Endpoints Furbys",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30606823"
+  },
+  "item": [
+    {
+      "name": "GET/furbys",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/furbys",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["furbys"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ping",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": [""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Not found",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/furbyss",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["furbyss"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

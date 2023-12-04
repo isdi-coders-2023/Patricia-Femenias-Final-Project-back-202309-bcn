@@ -1,9 +1,9 @@
 import request from "supertest";
-import furbysMock from "../mocks/furbysMock";
-import Furby from "../model/Furby";
-import app from "../../../server/app";
-import { type FurbyStructure } from "../types";
-import "../../../server/index";
+import furbysMock from "../../mocks/furbysMock";
+import Furby from "../../model/Furby";
+import app from "../../../../server/app";
+import { type FurbyStructure } from "../../types";
+import "../../../../server/index";
 
 describe("Given a GET/furbys endpoint", () => {
   describe("When it receives a valid request", () => {
