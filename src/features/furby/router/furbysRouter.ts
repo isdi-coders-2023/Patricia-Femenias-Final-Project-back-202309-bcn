@@ -11,4 +11,6 @@ const furbysController = new FurbysController(furbysRepository);
 
 furbysRouter.get("/", furbysController.getFurbys);
 
+furbysRouter.delete("/:furbyId", furbysController.deleteFurby);
+
 export default furbysRouter;
