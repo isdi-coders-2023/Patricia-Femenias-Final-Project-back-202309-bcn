@@ -1,5 +1,5 @@
 import Furby from "../model/Furby.js";
-import { type FurbyStructure } from "../types";
+import { type FurbyStructureWithoutId, type FurbyStructure } from "../types";
 import { type FurbysRepository } from "./types";
 
 class FurbysMongooseRepository implements FurbysRepository {
@@ -14,6 +14,16 @@ class FurbysMongooseRepository implements FurbysRepository {
       await Furby.findByIdAndDelete(furbyId);
     } catch (error) {
       throw new Error("Error deleting this Furby" + (error as Error).message);
+    }
+  }
+
+  async addFurby(furby: FurbyStructureWithoutId): Promise<FurbyStructure> {
+    try {
+      const newFurby = await Furby.create(furby);
+
+      return newFurby;
+    } catch (error) {
+      throw new Error("Error creating this Furby" + (error as Error).message);
     }
   }
 }
