@@ -1,5 +1,5 @@
 import request from "supertest";
-import app from "../../../app";
+import app from "../app";
 
 describe("Given an invalid GET/ endpoint", () => {
   describe("When it receives a request", () => {

@@ -23,7 +23,7 @@ class FurbysMongooseRepository implements FurbysRepository {
 
       return newFurby;
     } catch (error) {
-      throw new Error("Error creating this Furby" + (error as Error).message);
+      throw new Error("Error adding a new Furby" + (error as Error).message);
     }
   }
 }

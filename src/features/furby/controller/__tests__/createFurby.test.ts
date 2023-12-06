@@ -1,9 +1,9 @@
 import { type Request, type Response, type NextFunction } from "express";
-import { furbyMock } from "../../mocks/furbyMock";
 import type FurbysMongooseRepository from "../../repository/FurbysMongooseRepository";
 import { type FurbyRequestWithoutId } from "../../types";
 import FurbysController from "../FurbysController";
 import type CustomError from "../../../../server/CustomError/CustomError";
+import { furbyMock } from "../../mocks/furbyMock";
 
 afterEach(() => {
   jest.clearAllMocks();
