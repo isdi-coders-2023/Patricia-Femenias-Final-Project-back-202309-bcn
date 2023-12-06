@@ -1,8 +1,9 @@
 import request from "supertest";
 import app from "../../../../server/app";
 import "../../../../server/index";
-import { furbyMock } from "../../mocks/furbyMock";
 import { type FurbyStructure } from "../../types";
+import { furbyMock } from "../../mocks/furbyMock";
+import { server } from "../../../../setupTests";
 
 describe("Given a POST/furbys/create endpoint", () => {
   const path = "/furbys/create";
@@ -20,6 +21,24 @@ describe("Given a POST/furbys/create endpoint", () => {
       const responseBody = response.body as { furby: FurbyStructure };
 
       expect(responseBody.furby).toHaveProperty("name", expectedName);
+    });
+  });
+
+  describe("When it receives an invalid request", () => {
+    test("Then it should respond with the status code 404 and the error message 'Error adding a new Furby'", async () => {
+      await server.stop();
+
+      const expectedStatusCode = 400;
+      const expectedError = { error: "Error adding a new Furby" };
+
+      const response = await request(app)
+        .post(path)
+        .send(furbyMock)
+        .expect(expectedStatusCode);
+
+      const responseBody = response.body as { error: string };
+
+      expect(responseBody).toStrictEqual(expectedError);
     });
   });
 });
