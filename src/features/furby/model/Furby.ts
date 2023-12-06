@@ -26,7 +26,7 @@ const FurbySchema = new Schema<FurbyStructure>({
     type: Number,
     required: true,
   },
-  howFoundit: {
+  howFoundIt: {
     type: String,
     required: true,
   },

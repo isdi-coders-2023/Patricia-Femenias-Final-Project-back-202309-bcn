@@ -8,7 +8,7 @@ export interface FurbyStructure extends FurbyStructureWithoutId {
   generation: number;
   language: string;
   price: number;
-  howFoundit: string;
+  howFoundIt: string;
   imageUrl: string;
 }
 
@@ -19,7 +19,7 @@ export interface FurbyStructureWithoutId {
   generation: number;
   language: string;
   price: number;
-  howFoundit: string;
+  howFoundIt: string;
   imageUrl: string;
 }
 

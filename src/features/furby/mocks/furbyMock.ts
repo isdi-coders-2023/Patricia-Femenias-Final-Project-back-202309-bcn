@@ -7,7 +7,7 @@ export const furbyMock: FurbyStructureWithoutId = {
   generation: 1,
   language: "French",
   price: 25,
-  howFoundit:
+  howFoundIt:
     "I bought this Furby through Vinted and it arrived very clean and in perfect condition.",
   imageUrl: "https://i.ibb.co/0FrzcXK/peachy.webp",
 };
