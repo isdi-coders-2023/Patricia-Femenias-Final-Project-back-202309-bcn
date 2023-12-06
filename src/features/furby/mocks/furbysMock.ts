@@ -9,7 +9,7 @@ const furbysMock: FurbyStructure[] = [
     generation: 1,
     language: "French",
     price: 25,
-    howFoundit:
+    howFoundIt:
       "I bought this Furby through Vinted and it arrived very clean and in perfect condition.",
     imageUrl: "https://i.ibb.co/0FrzcXK/peachy.webp",
   },
@@ -21,7 +21,7 @@ const furbysMock: FurbyStructure[] = [
     generation: 5,
     language: "English",
     price: 84,
-    howFoundit:
+    howFoundIt:
       "I stumbled upon the adorable Furby Gizmo while exploring a quirky vintage store in downtown London. Its bright colors and playful demeanor instantly caught my eye, and I couldn't resist bringing this delightful companion home with me.",
     imageUrl: "https://i.ibb.co/ThY8Mdp/gizmo.webp",
   },

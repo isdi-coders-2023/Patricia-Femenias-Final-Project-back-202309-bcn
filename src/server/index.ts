@@ -16,7 +16,7 @@ app.use(morgan("dev"));
 
 app.use(
   cors({
-    origin: [frontUrl, `http://localhost:${port}`],
+    origin: [frontUrl],
   }),
 );
 

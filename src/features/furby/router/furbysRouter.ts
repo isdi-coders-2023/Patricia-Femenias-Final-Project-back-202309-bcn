@@ -2,6 +2,7 @@ import { Router } from "express";
 import FurbysController from "../controller/FurbysController.js";
 import FurbysMongooseRepository from "../repository/FurbysMongooseRepository.js";
 import { type FurbysRepository } from "../repository/types";
+import furbyValidation from "../schema/furbySchema.js";
 
 const furbysRouter = Router();
 
@@ -12,5 +13,7 @@ const furbysController = new FurbysController(furbysRepository);
 furbysRouter.get("/", furbysController.getFurbys);
 
 furbysRouter.delete("/:furbyId", furbysController.deleteFurby);
+
+furbysRouter.post("/create", furbyValidation, furbysController.addFurby);
 
 export default furbysRouter;

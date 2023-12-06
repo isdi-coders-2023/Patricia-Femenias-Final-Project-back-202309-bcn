@@ -4,7 +4,7 @@ import "../../../../server/index";
 import Furby from "../../model/Furby";
 import furbysMock from "../../mocks/furbysMock";
 
-describe("Given a DELETE/furby endpoint", () => {
+describe("Given a DELETE/furbys/:furbyId endpoint", () => {
   describe("When it receives a valid request", () => {
     test("Then it should respond with the status code 200 and an empty object", async () => {
       const expectedStatusCode = 200;

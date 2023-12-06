@@ -1,4 +1,4 @@
-import { response, type Request, type Response } from "express";
+import { type Request, type Response } from "express";
 import furbysMock from "../../mocks/furbysMock";
 import { type FurbysRepository } from "../../repository/types";
 import FurbysController from "../FurbysController";

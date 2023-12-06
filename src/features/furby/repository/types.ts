@@ -1,6 +1,7 @@
-import { type FurbyStructure } from "../types";
+import { type FurbyStructureWithoutId, type FurbyStructure } from "../types";
 
 export interface FurbysRepository {
   getFurbys: () => Promise<FurbyStructure[]>;
   deleteFurby: (furbyId: string) => Promise<void>;
+  addFurby: (furby: FurbyStructureWithoutId) => Promise<FurbyStructure>;
 }

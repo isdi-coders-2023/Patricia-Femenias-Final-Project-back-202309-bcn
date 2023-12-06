@@ -7,7 +7,7 @@
   },
   "item": [
     {
-      "name": "GET/furbys",
+      "name": "GET Endpoint",
       "request": {
         "method": "GET",
         "header": [],
@@ -22,7 +22,7 @@
       "response": []
     },
     {
-      "name": "Ping",
+      "name": "Ping Endpoint",
       "request": {
         "method": "GET",
         "header": [],
@@ -37,7 +37,7 @@
       "response": []
     },
     {
-      "name": "Not found",
+      "name": "Not found Endpoint",
       "request": {
         "method": "GET",
         "header": [],
@@ -47,6 +47,45 @@
           "host": ["localhost"],
           "port": "4000",
           "path": ["furbyss"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE Endpoint",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/furbys/6564a27d66ed505ce77a67d3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["furbys", "6564a27d66ed505ce77a67d3"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CREATE Endpoint",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Mono\",\r\n  \"type\": \"normal\",\r\n  \"year\": 1998,\r\n  \"generation\": 1,\r\n  \"language\": \"Spanish\",\r\n  \"price\": 10,\r\n  \"howFoundIt\": \"When the Elephant Furby arrived, its mechanical heartbeat was silent, presenting a challenge. Undeterred, I embraced the opportunity to troubleshoot and tinker. After a bit of technical finesse and a dash of perseverance, the once-silent Elephant Furby now trumpets to life, adding a tale of resilience to my eclectic collection.\",\r\n  \"imageUrl\": \"https://i.ibb.co/gTv7H18/elephant.webp\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/furbys/create",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["furbys", "create"]
         }
       },
       "response": []
