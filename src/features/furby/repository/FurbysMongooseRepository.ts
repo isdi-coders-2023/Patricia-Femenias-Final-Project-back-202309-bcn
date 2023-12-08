@@ -26,6 +26,15 @@ class FurbysMongooseRepository implements FurbysRepository {
       throw new Error("Error adding a new Furby" + (error as Error).message);
     }
   }
+
+  async getFurbyById(id: string): Promise<FurbyStructure> {
+    try {
+      const furby = await Furby.findById(id);
+      return furby!;
+    } catch (error) {
+      throw new Error("Error finding Furby" + (error as Error).message);
+    }
+  }
 }
 
 export default FurbysMongooseRepository;

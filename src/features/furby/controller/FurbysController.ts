@@ -45,6 +45,24 @@ class FurbysController {
       next(customError);
     }
   };
+
+  getFurbyById = async (
+    req: Request<{ furbyId: string }>,
+    res: Response,
+    next: NextFunction,
+  ): Promise<void> => {
+    try {
+      const { furbyId } = req.params;
+
+      const furby = await this.furbysRepository.getFurbyById(furbyId);
+
+      res.status(200).json(furby);
+    } catch {
+      const customError = new CustomError("Error finding this Furby", 400);
+
+      next(customError);
+    }
+  };
 }
 
 export default FurbysController;

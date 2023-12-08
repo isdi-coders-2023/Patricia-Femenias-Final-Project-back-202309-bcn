@@ -9,7 +9,7 @@ afterEach(() => {
   jest.clearAllMocks();
 });
 
-describe("Given a FurbyController with a createFurby method", () => {
+describe("Given a FurbysController with a createFurby method", () => {
   describe("When it receives a request with a new furby without id and a resposne", () => {
     const req: Pick<FurbyRequestWithoutId, "body"> = {
       body: furbyMock,
@@ -26,6 +26,7 @@ describe("Given a FurbyController with a createFurby method", () => {
       getFurbys: jest.fn(),
       deleteFurby: jest.fn(),
       addFurby: jest.fn().mockResolvedValue({ furbyMock }),
+      getFurbyById: jest.fn(),
     };
 
     test("Then it should call its status method with the status code 201", async () => {
@@ -57,6 +58,7 @@ describe("Given a FurbyController with a createFurby method", () => {
         getFurbys: jest.fn(),
         deleteFurby: jest.fn(),
         addFurby: jest.fn().mockRejectedValue(undefined),
+        getFurbyById: jest.fn(),
       };
 
       const expectedError: Partial<CustomError> = {
