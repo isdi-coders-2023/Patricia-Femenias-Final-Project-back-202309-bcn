@@ -89,6 +89,21 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "GETbyId Endpoint",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/furbys/656f11e3382141d346c68356",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["furbys", "656f11e3382141d346c68356"]
+        }
+      },
+      "response": []
     }
   ]
 }
