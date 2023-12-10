@@ -27,6 +27,7 @@ describe("Given a FurbysController with a createFurby method", () => {
       deleteFurby: jest.fn(),
       addFurby: jest.fn().mockResolvedValue({ furbyMock }),
       getFurbyById: jest.fn(),
+      modifyFurby: jest.fn(),
     };
 
     test("Then it should call its status method with the status code 201", async () => {
@@ -59,6 +60,7 @@ describe("Given a FurbysController with a createFurby method", () => {
         deleteFurby: jest.fn(),
         addFurby: jest.fn().mockRejectedValue(undefined),
         getFurbyById: jest.fn(),
+        modifyFurby: jest.fn(),
       };
 
       const expectedError: Partial<CustomError> = {
