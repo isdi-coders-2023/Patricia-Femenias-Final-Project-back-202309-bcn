@@ -104,6 +104,30 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "PATCH Endpoint",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"year\": 2001\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/furbys/656f11e3382141d346c68356",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["furbys", "656f11e3382141d346c68356"]
+        }
+      },
+      "response": []
     }
   ]
 }
