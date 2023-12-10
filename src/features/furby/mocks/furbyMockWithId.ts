@@ -1,6 +1,7 @@
-import { type FurbyStructureWithoutId } from "../types";
+import { type FurbyStructure } from "../types";
 
-export const modifiedFurbyMock: FurbyStructureWithoutId = {
+export const furbyMockWithId: FurbyStructure = {
+  _id: "656f11e3382141d346c68355",
   name: "Peachy",
   type: "baby",
   year: 1999,
