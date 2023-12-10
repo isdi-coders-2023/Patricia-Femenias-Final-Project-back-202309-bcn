@@ -5,4 +5,8 @@ export interface FurbysRepository {
   deleteFurby: (furbyId: string) => Promise<void>;
   addFurby: (furby: FurbyStructureWithoutId) => Promise<FurbyStructure>;
   getFurbyById: (furbyId: string) => Promise<FurbyStructure>;
+  modifyFurby: (
+    id: string,
+    furby: FurbyStructure,
+  ) => Promise<FurbyStructure | undefined>;
 }
