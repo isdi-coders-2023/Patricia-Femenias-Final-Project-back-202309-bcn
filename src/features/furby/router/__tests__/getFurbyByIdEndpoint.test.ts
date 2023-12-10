@@ -18,7 +18,7 @@ describe("Given a GET method with a /furbys/:furbyId endpoint", () => {
 
       const responseBody = response.body as { furby: FurbyStructure };
 
-      expect(responseBody).toHaveProperty("name", expectedFurbyName);
+      expect(responseBody.furby).toHaveProperty("name", expectedFurbyName);
     });
   });
 

@@ -5,6 +5,10 @@ import { furbyMock } from "../../mocks/furbyMock";
 import FurbysController from "../FurbysController";
 import type CustomError from "../../../../server/CustomError/CustomError";
 
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
 describe("Given a FurbysController getFurbyById method", () => {
   const req: Pick<FurbyRequestById, "params"> = {
     params: { furbyId: "4983fji30" },
@@ -46,7 +50,7 @@ describe("Given a FurbysController getFurbyById method", () => {
         next,
       );
 
-      expect(res.json).toHaveBeenCalledWith(furbyMock);
+      expect(res.json).toHaveBeenCalledWith({ furby: furbyMock });
     });
   });
 

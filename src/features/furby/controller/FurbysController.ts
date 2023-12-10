@@ -56,7 +56,7 @@ class FurbysController {
 
       const furby = await this.furbysRepository.getFurbyById(furbyId);
 
-      res.status(200).json(furby);
+      res.status(200).json({ furby });
     } catch {
       const customError = new CustomError("Error finding this Furby", 400);
 
