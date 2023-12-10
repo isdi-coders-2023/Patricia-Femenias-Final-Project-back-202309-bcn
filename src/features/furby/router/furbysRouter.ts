@@ -13,5 +13,6 @@ furbysRouter.get("/", furbysController.getFurbys);
 furbysRouter.delete("/:furbyId", furbysController.deleteFurby);
 furbysRouter.post("/create", furbyValidation, furbysController.addFurby);
 furbysRouter.get("/:furbyId", furbysController.getFurbyById);
+furbysRouter.patch("/:furbyId", furbysController.modifyFurby);
 
 export default furbysRouter;

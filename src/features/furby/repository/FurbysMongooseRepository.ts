@@ -43,7 +43,7 @@ class FurbysMongooseRepository implements FurbysRepository {
     try {
       const modifiedFurby = await Furby.findByIdAndUpdate(
         id,
-        { furby },
+        { ...furby },
         { returnDocument: "after" },
       );
       return modifiedFurby!;

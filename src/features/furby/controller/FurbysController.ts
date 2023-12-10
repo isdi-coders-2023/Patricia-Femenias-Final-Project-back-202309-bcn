@@ -71,9 +71,10 @@ class FurbysController {
   ): Promise<void> => {
     try {
       const furby = req.body;
+      const { furbyId } = req.params;
 
       const modifiedFurby = await this.furbysRepository.modifyFurby(
-        furby._id,
+        furbyId,
         furby,
       );
 
