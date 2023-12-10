@@ -1,7 +1,7 @@
 import { type NextFunction, type Request, type Response } from "express";
 import { type FurbysRepository } from "../repository/types";
 import CustomError from "../../../server/CustomError/CustomError.js";
-import { type FurbyRequestWithoutId } from "../types";
+import { type FurbyRequestWithId, type FurbyRequestWithoutId } from "../types";
 
 class FurbysController {
   constructor(private readonly furbysRepository: FurbysRepository) {}
@@ -59,6 +59,27 @@ class FurbysController {
       res.status(200).json({ furby });
     } catch {
       const customError = new CustomError("Error finding this Furby", 400);
+
+      next(customError);
+    }
+  };
+
+  modifyFurby = async (
+    req: FurbyRequestWithId,
+    res: Response,
+    next: NextFunction,
+  ): Promise<void> => {
+    try {
+      const furby = req.body;
+
+      const modifiedFurby = await this.furbysRepository.modifyFurby(
+        furby._id,
+        furby,
+      );
+
+      res.status(200).json({ furby: modifiedFurby });
+    } catch {
+      const customError = new CustomError("Error modifiying your Furby", 400);
 
       next(customError);
     }

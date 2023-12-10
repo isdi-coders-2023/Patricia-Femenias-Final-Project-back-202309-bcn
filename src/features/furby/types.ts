@@ -29,4 +29,10 @@ export type FurbyRequestWithoutId = Request<
   FurbyStructureWithoutId
 >;
 
+export type FurbyRequestWithId = Request<
+  { furbyId: string },
+  Record<string, unknown>,
+  FurbyStructure
+>;
+
 export type FurbyRequestById = Request<{ furbyId: string }>;
