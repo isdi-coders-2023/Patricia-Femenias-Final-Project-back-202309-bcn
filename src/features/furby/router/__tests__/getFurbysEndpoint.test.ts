@@ -17,6 +17,8 @@ describe("Given a GET/furbys endpoint", () => {
       const response = await request(app).get(path).expect(expectedStatusCode);
       const responseBody = response.body as { furbys: FurbyStructure[] };
 
+      const invertFurbysMock = furbysMock.reverse();
+
       responseBody.furbys.forEach((furby, furbyPosition) => {
         expect(furby).toHaveProperty("name", furbysMock[furbyPosition].name);
       });

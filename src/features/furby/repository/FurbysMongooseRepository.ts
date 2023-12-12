@@ -4,7 +4,7 @@ import { type FurbysRepository } from "./types";
 
 class FurbysMongooseRepository implements FurbysRepository {
   public async getFurbys(): Promise<FurbyStructure[]> {
-    const furbys = await Furby.find().limit(10);
+    const furbys = await Furby.find().limit(10).sort({ _id: -1 });
 
     return furbys;
   }
